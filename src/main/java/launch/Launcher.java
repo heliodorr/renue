@@ -24,7 +24,7 @@ public class Launcher {
 
     System.out.format("%d lines were found\n", addresses.size());
     System.out.format("Indexing column %d took %d ms\n", (desiredCol+1), indexingTime);
-    System.out.format("Filtering took %d ms\n", filteringTime);
+    System.out.format("Search and filtering took %d ms\n", filteringTime);
 
   }
 
