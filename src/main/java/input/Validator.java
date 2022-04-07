@@ -21,7 +21,11 @@ public class Validator {
       throw new IllegalArgumentException("Too many params");
 
     } else {
-      columnNum = Integer.parseInt(args[0]) - 1;
+      try {
+        columnNum = Integer.parseInt(args[0]) - 1;
+      } catch (NumberFormatException e){
+        throw new NumberFormatException("Column parameter is not an integer number");
+      }
     }
 
     try(BufferedReader br = ReadingUtils.getBuffReader()) {

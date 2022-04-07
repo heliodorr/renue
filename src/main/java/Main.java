@@ -19,7 +19,7 @@ public class Main {
       Launcher.launch(filterExp, desiredColumn);
 
     } catch (Exception e) {
-      e.printStackTrace();
+      System.out.println(e.getMessage());
     }
 
   }
