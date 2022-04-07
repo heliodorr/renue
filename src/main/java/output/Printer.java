@@ -7,6 +7,9 @@ import java.util.Deque;
 
 public class Printer {
 
+  /**
+   *Выводит записи в консоль по адресам(кол-ву байт от начала файла)
+   */
     public static void printRows(Deque<Long> addresses) throws IOException {
 
       try(RandomAccessFile raf = ReadingUtils.getRandomAccessFile()) {

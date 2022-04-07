@@ -8,6 +8,9 @@ import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+/**
+ *Для получения нужных ридеров
+ */
 public class ReadingUtils {
 
   public static BufferedReader getBuffReader() throws IOException {

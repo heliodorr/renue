@@ -6,8 +6,15 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Filter {
 
+  /**
+   * Возвращает Deque<Long> из адресов.
+   * Deque заполняется после того, как бинарный поиск найдет хотя бы одно
+   * вхождение строки-фильтра.
+   *
+   */
   public static Deque<Long> findFilteredAddresses(List<IndexEntry> indexEntries, String filterExp) {
 
     Deque<Long> answer = new LinkedList<>();
@@ -16,7 +23,7 @@ public class Filter {
     int end = indexEntries.size() - 1;
     int mid;
 
-    while (start < end) {
+    while (start <= end) {
 
       mid = start + (end - start) / 2;
 

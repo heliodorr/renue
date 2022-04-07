@@ -6,6 +6,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Properties;
 
+/**
+ *Класс для получения настроек
+ */
 public class Props {
 
   private static final String PROPERTY_FILENAME = "props.properties";

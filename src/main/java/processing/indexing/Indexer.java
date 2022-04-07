@@ -6,9 +6,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Indexer {
 
+  /**
+   * Индексирует файл, т.е. ассоциирует адрес строки в файле(кол-во байт от начала файла)
+   * и значения строки в желаемой колонке.
+   *
+   * Возвращает List<IndexEntry>, который отсортирован по строкам в каждом
+   * IndexEntry.
+   */
   public static List<IndexEntry> indexing(int desiredCol) throws IOException {
 
     List<IndexEntry> entryList = new ArrayList<>(8000);

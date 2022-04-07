@@ -1,5 +1,6 @@
 package launch;
 
+import input.Validator;
 import java.io.IOException;
 import java.util.Deque;
 import java.util.List;
@@ -8,9 +9,20 @@ import output.Printer;
 import processing.indexing.IndexEntry;
 import processing.indexing.Indexer;
 
+/**
+ * Класс для запуска приложения и подсчета времени.
+ */
 public class Launcher {
 
-  public static void launch(String filterExp, int desiredCol) throws IOException {
+  public static void launch(String[] args) throws IOException {
+
+    int desiredCol = 0;
+    String filterExp = "";
+
+    desiredCol = Validator.getColumnNum(args);
+    System.out.println("Enter query:");
+    filterExp = Validator.getFilterExp();
+
 
     long indexingTime = System.currentTimeMillis();
     List<IndexEntry> indexEntries = Indexer.indexing(desiredCol);
