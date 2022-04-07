@@ -22,7 +22,7 @@ public class Launcher {
 
     Printer.printRows(addresses);
 
-    System.out.format("Was found %d lines\n", addresses.size());
+    System.out.format("%d lines were found\n", addresses.size());
     System.out.format("Indexing column %d took %d ms\n", (desiredCol+1), indexingTime);
     System.out.format("Filtering took %d ms\n", filteringTime);
 
