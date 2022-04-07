@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- *Для валидации и/или получения данных
+ * Для валидации и/или получения данных
  */
 
 public class Validator {
@@ -13,7 +13,7 @@ public class Validator {
   private static final char QUOTE = '"';
 
   /**
-   * @return номер колонки для индексирования
+   * Возвращает номер колонки для индексирования
    */
   public static int getColumnNum(String[] args) throws IOException, IllegalArgumentException {
 
@@ -48,7 +48,7 @@ public class Validator {
   }
 
   /**
-   *@return фильтр от пользователя
+   * Возвращает фильтр от пользователя
    */
   public static String getFilterExp() throws IOException {
 

@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.util.Properties;
 
 /**
- *Класс для получения настроек
+ * Класс для получения настроек
  */
 public class Props {
 

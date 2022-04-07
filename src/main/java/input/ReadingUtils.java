@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- *Для получения нужных ридеров
+ * Для получения нужных ридеров
  */
 public class ReadingUtils {
 
