@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Filter {
 
-  public static Deque<Long> findFilteredAddresses(List<IndexEntry>  indexEntries, String filterExp) {
+  public static Deque<Long> findFilteredAddresses(List<IndexEntry> indexEntries, String filterExp) {
 
     Deque<Long> answer = new LinkedList<>();
 

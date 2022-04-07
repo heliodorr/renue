@@ -12,11 +12,8 @@ public class Indexer {
   public static List<IndexEntry> indexing(int desiredCol) throws IOException {
 
     List<IndexEntry> entryList = new ArrayList<>(8000);
-
     getColumnData(entryList, desiredCol);
-
     entryList.sort(IndexEntry::compareTo);
-
     return  entryList;
 
   }
@@ -33,6 +30,7 @@ public class Indexer {
 
       byte[] s = new byte[256];
       int sPointer = 0;
+      int[] offsetAndLength = new int[2];
 
       int readed = 0;
       while((readed = bis.read(buff)) != -1){
@@ -41,9 +39,8 @@ public class Indexer {
 
           if(buff[i] == '\n'){
 
-            String str = new String(s,0, sPointer);
-            str = str.split(",")[desiredCol];
-
+            setStringPosition(s, sPointer, desiredCol, offsetAndLength);
+            String str = new String(s,offsetAndLength[0], offsetAndLength[1]);
             IndexEntry entry = new IndexEntry(str, address);
 
             list.add(entry);
@@ -63,6 +60,39 @@ public class Indexer {
     }
 
   }
+
+  private static void setStringPosition (
+      byte[] s,
+      int strOffset,
+      int desiredCol,
+      int[] offSetAndLength
+  ) {
+
+    int currentCol = 0;
+    int length = 0;
+    for (int i = 0; i < strOffset; i++) {
+
+      if(currentCol == desiredCol){
+
+        offSetAndLength[0] = i;
+        while (s[i] != ',' && s[i] != '\n'){
+          i++;
+          length++;
+        }
+        offSetAndLength[1] = length;
+        break;
+
+      } else if(s[i]==',') {
+
+        currentCol++;
+      }
+
+    }
+
+
+
+  }
+
 
 }
 
